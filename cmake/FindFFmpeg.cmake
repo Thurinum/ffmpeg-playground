@@ -21,9 +21,12 @@ if (FFMPEG_LIB_DIR AND FFMPEG_INCLUDE_DIR)
         target_link_libraries(FFmpeg::${COMPONENT} INTERFACE ${COMPONENT})
     endforeach()
 else()
-    # NOT TESTED! 99.999996999420999% won't work
     if (NOT PkgConfig_FOUND)
-        message(FATAL_ERROR "Please specify the FFMPEG_LIB_DIR (.lib) and FFMPEG_INCLUDE_DIR (.h) environment variables.")
+        message(FATAL_ERROR [=[
+            Could not locate pkg-config. Either:
+            - Install pkg-config, if available on your platform, alongside the FFmpeg development libraries.
+            - Set the FFMPEG_LIB_DIR (shared libs directory) and FFMPEG_INCLUDE_DIR (.h directory) environment variables.
+        ]=])
     endif()
 
     message(STATUS "Found pkg-config. Using it to locate FFmpeg.")
