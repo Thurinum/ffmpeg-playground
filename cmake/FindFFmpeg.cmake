@@ -3,6 +3,12 @@ find_package(PkgConfig QUIET)
 set(FFMPEG_LIB_DIR $ENV{FFMPEG_LIB_DIR})
 set(FFMPEG_INCLUDE_DIR $ENV{FFMPEG_INCLUDE_DIR})
 
+list(LENGTH FFmpeg_FIND_COMPONENTS NUM_COMPONENTS)
+if (LIST_LENGTH EQUAL 0)
+    message(NOTICE "No FFmpeg components specified. Defaulting to everything.")
+    set(FFmpeg_FIND_COMPONENTS avcodec avdevice avfilter avformat avresample avutil postproc swresample swscale)
+endif()
+
 if (FFMPEG_LIB_DIR AND FFMPEG_INCLUDE_DIR)
     message(STATUS "Found env variables FFMPEG_LIB_DIR (${FFMPEG_LIB_DIR}) and FFMPEG_INCLUDE_DIR (${FFMPEG_INCLUDE_DIR}).")
 
