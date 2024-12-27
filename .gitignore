@@ -12,6 +12,7 @@ cmake-build-*/
 build/
 .qtc_clangd/
 SimpleMediaEncoder_autogen/
+ffmpeg/*.h
 
 # Binaries
 *.dll
