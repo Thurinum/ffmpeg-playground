@@ -23,7 +23,7 @@ int main(const int argc, const char* argv[]) {
         return -1;
     }
 
-    std::printf("format %s, duration %lld us, bit_rate %lld\n", formatContext->iformat->name, formatContext->duration, formatContext->bit_rate);
+    std::printf("format %s, duration %lld s, bit_rate %lld\n", formatContext->iformat->name, formatContext->duration, formatContext->bit_rate);
 
     return 0;
 }
