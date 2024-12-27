@@ -37,7 +37,7 @@ else()
 
     message(STATUS "Found pkg-config. Using it to locate FFmpeg.")
 
-    pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET ${FFMPEG_LIBS})
+    pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET ${FFmpeg_FIND_COMPONENTS})
     add_library(FFmpeg::FFmpeg ALIAS PkgConfig::FFMPEG)
     message(STATUS "Found FFmpeg libraries: ${FFMPEG_LIBS}.")
 endif()
