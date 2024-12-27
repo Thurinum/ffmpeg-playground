@@ -23,9 +23,9 @@ if (FFMPEG_LIB_DIR AND FFMPEG_INCLUDE_DIR)
 else()
     if (NOT PkgConfig_FOUND)
         message(FATAL_ERROR [=[
-            Could not locate pkg-config. Either:
-            - Install pkg-config, if available on your platform, alongside the FFmpeg development libraries.
-            - Set the FFMPEG_LIB_DIR (shared libs directory) and FFMPEG_INCLUDE_DIR (.h directory) environment variables.
+    Could not locate pkg-config. Either:
+    - Install pkg-config, if available on your platform, alongside the FFmpeg development libraries.
+    - Set the FFMPEG_LIB_DIR (shared libs directory) and FFMPEG_INCLUDE_DIR (.h directory) environment variables.
         ]=])
     endif()
 
