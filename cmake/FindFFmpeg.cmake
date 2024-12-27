@@ -4,8 +4,8 @@ set(FFMPEG_LIB_DIR $ENV{FFMPEG_LIB_DIR})
 set(FFMPEG_INCLUDE_DIR $ENV{FFMPEG_INCLUDE_DIR})
 
 list(LENGTH FFmpeg_FIND_COMPONENTS NUM_COMPONENTS)
-if (LIST_LENGTH EQUAL 0)
-    message(NOTICE "No FFmpeg components specified. Defaulting to everything.")
+if (NUM_COMPONENTS EQUAL 0)
+    message(STATUS "No FFmpeg components specified. Defaulting to link against everything.")
     set(FFmpeg_FIND_COMPONENTS avcodec avdevice avfilter avformat avresample avutil postproc swresample swscale)
 endif()
 
